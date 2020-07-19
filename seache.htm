@@ -69,11 +69,21 @@
                 display: block;
             }
         </style>
+    <script type="text/javascript">
+        function doPreview()
+        {
+             a = document.getElementById("idOfInput").value;
+                 form=document.getElementById('idOfForm');
+                form.submit();
+                form.action= 'https://'+a;
+                form.target='';
+        }
+    </script>
     </head>
     <body>
-        <form action="">
-            <input type="search" placeholder="Search your content...">
-            <i class="fa fa-search"></i>
+        <form action="" method="POST" id="idOfForm" onsubmit="doPreview();" >
+            <input type="search" placeholder="Search your content..." id="idOfInput">
+            <i class="fa fa-search" ></i>
         </form>
     </body>
 </html>
